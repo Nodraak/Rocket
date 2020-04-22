@@ -158,10 +158,9 @@ As an example, consider the following request guard implementation for
 integer ID per request:
 
 ```rust
-# #[macro_use] extern crate rocket;
-# fn main() {}
-# use std::sync::atomic::{AtomicUsize, Ordering};
+#[macro_use] extern crate rocket;
 
+use std::sync::atomic::{AtomicUsize, Ordering};
 use rocket::request::{self, Request, FromRequest};
 
 /// A global atomic counter for generating IDs.
